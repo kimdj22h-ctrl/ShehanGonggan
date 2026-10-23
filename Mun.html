@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문 — 파주의 셰한공간</title>
+    <link rel="stylesheet" href="style.css"> <!--html과 css 연결-->
+</head>
+<body class="p-mun">
+    <!-- 모든 페이지 위에 같은 길잡이(목차)를 둔다. 지금 있는 페이지에는 class="jigeum" -->
+    <nav class="giljabi">
+        <a href="index.html" class="jemok">파주의 셰한공간</a>
+        <a href="문.html" class="jigeum">문</a>
+        <a href="복도.html">복도</a>
+        <a href="계단.html">계단</a>
+        <a href="지하주차장.html">지하주차장</a>
+        <a href="멈춘놀이터.html">멈춘 놀이터</a>
+    </nav>
+
+    <!-- 이 페이지의 방식: 잘라내기 — 사진에서 문이 있는 부분만 잘라 낸다. 문을 누르면 다음 문이 나온다 -->
+    <!-- 넘김 (js 없이 html·css만)
+         - 장면마다 바로 앞에 동그라미 선택 버튼(input type="radio")을 하나씩 둔다. 버튼은 css로 숨긴다.
+         - 장면 자체를 label로 만들고, for에 "다음 장면의 버튼 id"를 적는다.
+           → 장면을 누르면 다음 버튼이 선택되고, css의 input:checked + .jang 규칙이 다음 장면을 보여 준다.
+         - 마지막 장면만 label 대신 a(링크)로 만들어서, 누르면 다음 페이지로 간다. -->
+    <main class="neomgim">
+        <input type="radio" name="mun" id="mun1" checked>
+        <label class="jang mun" for="mun2" style="width: 636px; height: 520px;">
+            <img src="img/042.jpg" style="width: 1444px; left: -433px; top: -325px;">
+            <span class="sae">문 1 / 10</span>
+        </label>
+        <input type="radio" name="mun" id="mun2">
+        <label class="jang mun" for="mun3" style="width: 327px; height: 520px;">
+            <img src="img/051.jpg" style="width: 963px; left: -366px; top: -144px;">
+            <span class="sae">문 2 / 10</span>
+        </label>
+        <input type="radio" name="mun" id="mun3">
+        <label class="jang mun" for="mun4" style="width: 277px; height: 520px;">
+            <img src="img/052.jpg" style="width: 867px; left: -399px; top: -78px;">
+            <span class="sae">문 3 / 10</span>
+        </label>
+        <input type="radio" name="mun" id="mun4">
+        <label class="jang mun" for="mun5" style="width: 242px; height: 520px;">
+            <img src="img/094.jpg" style="width: 806px; left: -97px; top: -73px;">
+            <span class="sae">문 4 / 10</span>
+        </label>
+        <input type="radio" name="mun" id="mun5">
+        <label class="jang mun" for="mun6" style="width: 433px; height: 520px;">
+            <img src="img/108.jpg" style="width: 722px; left: -144px; top: -11px;">
+            <span class="sae">문 5 / 10</span>
+        </label>
+        <input type="radio" name="mun" id="mun6">
+        <label class="jang mun" for="mun7" style="width: 533px; height: 520px;">
+            <img src="img/179.jpg" style="width: 1067px; left: -192px; top: -88px;">
+            <span class="sae">문 6 / 10</span>
+        </label>
+        <input type="radio" name="mun" id="mun7">
+        <label class="jang mun" for="mun8" style="width: 391px; height: 520px;">
+            <img src="img/090.jpg" style="width: 1261px; left: -529px; top: -265px;">
+            <span class="sae">문 7 / 10</span>
+        </label>
+        <input type="radio" name="mun" id="mun8">
+        <label class="jang mun" for="mun9" style="width: 228px; height: 520px;">
+            <img src="img/157.jpg" style="width: 878px; left: -316px; top: -46px;">
+            <span class="sae">문 8 / 10</span>
+        </label>
+        <input type="radio" name="mun" id="mun9">
+        <label class="jang mun" for="mun10" style="width: 264px; height: 520px;">
+            <img src="img/198.jpg" style="width: 1101px; left: -550px; top: -206px;">
+            <span class="sae">문 9 / 10</span>
+        </label>
+        <input type="radio" name="mun" id="mun10">
+        <a class="jang mun" href="복도.html" style="width: 273px; height: 520px;">
+            <img src="img/153.jpg" style="width: 1051px; left: -420px; top: -165px;">
+            <span class="sae">문 10 / 10</span>
+        </a>
+    </main>
+
+</body>
+</html>

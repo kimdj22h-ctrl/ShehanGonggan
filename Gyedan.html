@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계단 — 파주의 셰한공간</title>
+    <link rel="stylesheet" href="style.css"> <!--html과 css 연결-->
+</head>
+<body class="p-gyedan">
+    <!-- 모든 페이지 위에 같은 길잡이(목차)를 둔다. 지금 있는 페이지에는 class="jigeum" -->
+    <nav class="giljabi">
+        <a href="index.html" class="jemok">파주의 셰한공간</a>
+        <a href="문.html">문</a>
+        <a href="복도.html">복도</a>
+        <a href="계단.html" class="jigeum">계단</a>
+        <a href="지하주차장.html">지하주차장</a>
+        <a href="멈춘놀이터.html">멈춘 놀이터</a>
+    </nav>
+
+    <!-- 이 페이지의 방식: 덜어내기 — 계단 사진 위에 흰 네모와 동그라미를 얹어 문, 소화기, 창문, 표지판, 조명 같은 사물을 지우고 계단의 형태만 남긴다. 아래로 내리면 가린 것들만 모아 놓았다 -->
+    <!-- class="jangmyeon"(장면) 안에 사진 한 장과 흰 도형들을 겹쳐 놓는다.
+         도형 위치(left, top)와 크기(width, height)를 %로 적어서, 화면 크기가 바뀌어도 사진의 같은 자리를 가린다.
+         class="nemo"(네모), class="dong"(동그라미) -->
+    <main>
+        <div class="geurid">
+        <div class="jangmyeon">
+            <img src="img/096.jpg">
+            <span class="nemo" style="left: 42%; top: 9%; width: 21%; height: 41%;"></span>
+            <span class="nemo" style="left: 62%; top: 43%; width: 5.5%; height: 12%;"></span>
+            <span class="nemo" style="left: 63.5%; top: 37%; width: 5%; height: 5.5%;"></span>
+        </div>
+        <div class="jangmyeon">
+            <img src="img/177.jpg">
+            <span class="nemo" style="left: 36.5%; top: 35%; width: 15.5%; height: 39%;"></span>
+            <span class="nemo" style="left: 18%; top: 19%; width: 9.5%; height: 39%;"></span>
+            <span class="nemo" style="left: 9.5%; top: 44.5%; width: 4%; height: 8.5%;"></span>
+            <span class="nemo" style="left: 19%; top: 88%; width: 29%; height: 12%;"></span>
+        </div>
+        <div class="jangmyeon">
+            <img src="img/062.jpg">
+            <span class="nemo" style="left: 39.5%; top: 38%; width: 7%; height: 10%;"></span>
+            <span class="nemo" style="left: 59%; top: 32%; width: 8.5%; height: 42%;"></span>
+        </div>
+        <div class="jangmyeon">
+            <img src="img/182.jpg">
+            <span class="nemo" style="left: 19%; top: 15%; width: 13.5%; height: 38%;"></span>
+            <span class="nemo" style="left: 9.5%; top: 72%; width: 5%; height: 5.5%;"></span>
+        </div>
+        <div class="jangmyeon">
+            <img src="img/035.jpg">
+            <span class="nemo" style="left: 36%; top: 15%; width: 10.5%; height: 27%;"></span>
+            <span class="nemo" style="left: 19%; top: 70%; width: 14%; height: 30%;"></span>
+            <span class="dong" style="left: 44%; top: 4%; width: 4%; height: 4%;"></span>
+        </div>
+        <div class="jangmyeon">
+            <img src="img/009.jpg">
+            <span class="nemo" style="left: 45.5%; top: 33%; width: 9%; height: 50%;"></span>
+            <span class="dong" style="left: 47.5%; top: 11%; width: 4%; height: 4%;"></span>
+            <span class="dong" style="left: 83.5%; top: 8.5%; width: 4.5%; height: 4%;"></span>
+        </div>
+        <div class="jangmyeon">
+            <img src="img/169.jpg">
+            <span class="nemo" style="left: 68.5%; top: 34%; width: 5%; height: 22%;"></span>
+            <span class="nemo" style="left: 90.5%; top: 50.5%; width: 3%; height: 6%;"></span>
+            <span class="dong" style="left: 25.5%; top: 9%; width: 3.5%; height: 4%;"></span>
+            <span class="dong" style="left: 36.5%; top: 9%; width: 3.5%; height: 4%;"></span>
+        </div>
+        <div class="jangmyeon">
+            <img src="img/089.jpg">
+            <span class="nemo" style="left: 83%; top: 56%; width: 4.5%; height: 8%;"></span>
+            <span class="nemo" style="left: 51%; top: 29%; width: 24%; height: 27%;"></span>
+        </div>
+        </div>
+
+        <!-- 가린 것들: 네모로 가린 것은 네모로, 동그라미로 가린 것은 동그라미(class="gureum")로 오려 모은다 -->
+        <section class="garin">
+            <h2>가린 것들 · 23</h2>
+            <div class="garin-moeum">
+            <div class="jogak" style="width: 160px; height: 234px;">
+                <img src="img/096.jpg" style="width: 760px; left: -319px; top: -51px;">
+            </div>
+            <div class="jogak" style="width: 42px; height: 68px;">
+                <img src="img/096.jpg" style="width: 760px; left: -471px; top: -245px;">
+            </div>
+            <div class="jogak" style="width: 38px; height: 31px;">
+                <img src="img/096.jpg" style="width: 760px; left: -483px; top: -211px;">
+            </div>
+            <div class="jogak" style="width: 118px; height: 222px;">
+                <img src="img/177.jpg" style="width: 760px; left: -277px; top: -200px;">
+            </div>
+            <div class="jogak" style="width: 72px; height: 222px;">
+                <img src="img/177.jpg" style="width: 760px; left: -137px; top: -108px;">
+            </div>
+            <div class="jogak" style="width: 30px; height: 48px;">
+                <img src="img/177.jpg" style="width: 760px; left: -72px; top: -254px;">
+            </div>
+            <div class="jogak" style="width: 220px; height: 68px;">
+                <img src="img/177.jpg" style="width: 760px; left: -144px; top: -502px;">
+            </div>
+            <div class="jogak" style="width: 53px; height: 57px;">
+                <img src="img/062.jpg" style="width: 760px; left: -300px; top: -217px;">
+            </div>
+            <div class="jogak" style="width: 65px; height: 239px;">
+                <img src="img/062.jpg" style="width: 760px; left: -448px; top: -182px;">
+            </div>
+            <div class="jogak" style="width: 103px; height: 217px;">
+                <img src="img/182.jpg" style="width: 760px; left: -144px; top: -86px;">
+            </div>
+            <div class="jogak" style="width: 38px; height: 31px;">
+                <img src="img/182.jpg" style="width: 760px; left: -72px; top: -410px;">
+            </div>
+            <div class="jogak" style="width: 80px; height: 154px;">
+                <img src="img/035.jpg" style="width: 760px; left: -274px; top: -86px;">
+            </div>
+            <div class="jogak" style="width: 106px; height: 171px;">
+                <img src="img/035.jpg" style="width: 760px; left: -144px; top: -399px;">
+            </div>
+            <div class="jogak gureum" style="width: 30px; height: 23px;">
+                <img src="img/035.jpg" style="width: 760px; left: -334px; top: -23px;">
+            </div>
+            <div class="jogak" style="width: 68px; height: 285px;">
+                <img src="img/009.jpg" style="width: 760px; left: -346px; top: -188px;">
+            </div>
+            <div class="jogak gureum" style="width: 30px; height: 23px;">
+                <img src="img/009.jpg" style="width: 760px; left: -361px; top: -63px;">
+            </div>
+            <div class="jogak gureum" style="width: 34px; height: 23px;">
+                <img src="img/009.jpg" style="width: 760px; left: -635px; top: -48px;">
+            </div>
+            <div class="jogak" style="width: 38px; height: 125px;">
+                <img src="img/169.jpg" style="width: 760px; left: -521px; top: -194px;">
+            </div>
+            <div class="jogak" style="width: 23px; height: 34px;">
+                <img src="img/169.jpg" style="width: 760px; left: -688px; top: -288px;">
+            </div>
+            <div class="jogak gureum" style="width: 27px; height: 23px;">
+                <img src="img/169.jpg" style="width: 760px; left: -194px; top: -51px;">
+            </div>
+            <div class="jogak gureum" style="width: 27px; height: 23px;">
+                <img src="img/169.jpg" style="width: 760px; left: -277px; top: -51px;">
+            </div>
+            <div class="jogak" style="width: 34px; height: 46px;">
+                <img src="img/089.jpg" style="width: 760px; left: -631px; top: -319px;">
+            </div>
+            <div class="jogak" style="width: 182px; height: 154px;">
+                <img src="img/089.jpg" style="width: 760px; left: -388px; top: -165px;">
+            </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

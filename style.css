@@ -1,0 +1,285 @@
+/* ===========================================================
+   파주의 셰한공간 — 모든 페이지가 함께 쓰는 css (js 없이 html·css만)
+   위에서부터: 공통 → 첫 화면 → 문 → 복도 → 계단 → 지하주차장 → 멈춘 놀이터
+   =========================================================== */
+
+
+/* ---------- 공통 ---------- */
+
+body {
+    margin: 0;
+    font-family: "Pretendard", "Apple SD Gothic Neo", sans-serif;
+    font-size: 14px;
+    color: #222;
+    background-color: #ececea;
+}
+
+a {
+    color: inherit;
+}
+
+/* 길잡이(목차): 화면 왼쪽 위에 늘 떠 있다 */
+.giljabi {
+    position: fixed;
+    top: 16px;
+    left: 20px;
+    z-index: 1000;              /* 사진 조각보다 항상 위에 */
+    display: flex;
+    gap: 14px;
+    padding: 6px 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.giljabi a {
+    text-decoration: none;
+    color: #888;
+}
+
+.giljabi .jemok {
+    color: #222;
+    margin-right: 10px;
+}
+
+.giljabi .jigeum {              /* 지금 보고 있는 페이지 */
+    color: #222;
+    text-decoration: underline;
+}
+
+/* 화면 아래 가운데 작은 안내 글 */
+.sae {
+    position: fixed;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    text-align: center;
+    color: #777;
+    pointer-events: none;       /* 글자가 사진을 누르는 걸 막지 않게 */
+}
+
+.sae a {
+    pointer-events: auto;
+}
+
+/* 잘라내기 틀: 이 틀이 보여 주는 만큼만 사진이 보인다.
+   사진(img)을 틀보다 크게 키운 다음 left, top으로 밀어서 원하는 부분을 틀 안에 맞춘다.
+   (틀의 width·height, 사진의 width·left·top은 사진마다 달라서 html에 직접 적었다) */
+.jogak,
+.mun,
+.nameun,
+.ipgu {
+    position: relative;
+    overflow: hidden;           /* 틀 밖으로 나간 부분은 잘라서 숨긴다 */
+}
+
+.jogak img,
+.mun img,
+.nameun img,
+.ipgu img {
+    position: absolute;
+    max-width: none;
+    pointer-events: none;       /* 사진 대신 틀이 마우스를 받도록 */
+    user-select: none;
+}
+
+/* 넘김 (js 없이): 동그라미 버튼은 숨기고, 선택된 버튼 바로 뒤의 장면만 보인다 */
+.neomgim input {
+    display: none;
+}
+
+.neomgim .jang {
+    display: none;
+    cursor: pointer;
+}
+
+.neomgim input:checked + .jang {    /* + 는 '바로 뒤에 오는' 이라는 뜻 */
+    display: block;
+}
+
+
+/* ---------- 첫 화면 (index) ---------- */
+
+.cheot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 60px;
+}
+
+.cheot h1 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0 0 30px;
+}
+
+.cheot .ipgu {
+    cursor: pointer;
+}
+
+.cheot .annae {
+    color: #777;
+}
+
+.mokcha {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 18px;
+}
+
+
+/* ---------- 문 : 잘라내기 ---------- */
+
+.p-mun .neomgim {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ---------- 복도 : 덜어내기(흰 도형으로 지우기) ---------- */
+
+.p-bokdo {
+    background-color: #111;
+}
+
+/* 그리드: 장면 2개씩 나란히 (복도, 계단이 함께 쓴다) */
+.geurid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 90px 20px 60px;
+}
+
+.jangmyeon {                    /* 사진 한 장 + 흰 도형들 */
+    position: relative;         /* 도형의 %는 이 틀을 기준으로 잰다 */
+}
+
+.jangmyeon img {
+    display: block;
+    width: 100%;
+}
+
+.nemo,
+.dong {
+    position: absolute;
+    background-color: #fff;
+}
+
+.dong {
+    border-radius: 50%;
+}
+
+/* 아래로 내리면 나오는 '가린 것들' 모음 */
+.garin {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 100px;
+}
+
+.garin h2 {
+    margin: 0 0 30px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #888;
+}
+
+.garin-moeum {
+    display: flex;
+    flex-wrap: wrap;            /* 한 줄에 다 안 들어가면 다음 줄로 */
+    align-items: flex-end;      /* 크기가 달라도 아랫줄을 맞춘다 */
+    gap: 28px 24px;
+}
+
+/* ---------- 계단 : 덜어내기 (복도와 같은 구성) ---------- */
+
+.p-gyedan {
+    background-color: #111;
+}
+
+
+
+
+/* ---------- 지하주차장 : 잘라내기(확대·강조) + 모으기 ---------- */
+
+.p-juchajang {
+    background-color: #000;
+}
+
+.p-juchajang .giljabi {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.p-juchajang .giljabi a {
+    color: #777;
+}
+
+.p-juchajang .giljabi .jemok,
+.p-juchajang .giljabi .jigeum {
+    color: #eee;
+}
+
+.du-pan {                       /* 판 두 개를 나란히 */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.pan-moeum {                    /* 오른쪽 판: 바탕 사진 위에 조각을 모은다 */
+    position: relative;
+    width: 680px;
+    height: 520px;
+    overflow: hidden;
+}
+
+.pan-moeum .batang {            /* 바탕 사진은 판을 꽉 채운다 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pan-moeum .jogak {
+    position: absolute;
+}
+
+.p-juchajang .garin .geurid {   /* 아래 원본 사진 그리드: 바깥 여백은 .garin이 이미 주므로 뺀다 */
+    padding: 0;
+}
+
+.wonbon {
+    display: block;
+    width: 100%;
+}
+
+/* ---------- 멈춘 놀이터 : 구획 나누기 — 조각으로 하나의 공간 짓기 ---------- */
+
+.p-noriteo {
+    background-color: #dfe8e2;
+}
+
+.gonggan-teul {                 /* 공간을 담는 틀: 화면 가운데 */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 90px 20px 40px;
+}
+
+.gonggan {                      /* 조각들이 놓이는 판. 비율(aspect-ratio)은 html에 적었다 */
+    position: relative;
+}
+
+.gonggan .jogak {
+    position: absolute;
+}
+
+.gureum {
+    border-radius: 50%;         /* 지난 수업의 .gureum처럼 동그랗게. 조각마다 크기가 달라서 px 대신 % */
+}
+
+.p-noriteo .garin .geurid {
+    padding: 0;
+}
